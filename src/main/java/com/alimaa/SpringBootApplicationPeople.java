@@ -41,18 +41,23 @@ public class SpringBootApplicationPeople {
     // implement getPersonById
 //    need the @GetMapping
 
-    @GetMapping(path = "people/{id}") // path variable is /
-    public Person getPersonById(@PathVariable("id") Integer id) { // path variable is id and its same as the id stated in the path variable - id is an integer
-        // filter list and return person that matches id otherwise return null
+    // path variable is what goes after  / --> specifying what the path needs to be
+    // id within {} means it's not a fixed number
+    @GetMapping(path = "people/{id}")
+    // path variable is id and its same as the id stated in the path variable - id is an integer
+    public Person getPersonById(@PathVariable("id") Integer id) {
 
-        // need an enhanced for loop if Person
+        // filter list and return person that matches id otherwise return null -->
+
+        // need an enhanced for loop, looping through getPerson ArrayList
+        // put it in the person placeholder of the Person object
         for (Person person : getPerson) {
-            // if condition
+            // if condition - if the id is equal to the person id then it will return that person
             if (id == person.getId()) {
                 return person;
             }
 
-        }
+        }// otherwise it will return null 
         return null;
     }
 
