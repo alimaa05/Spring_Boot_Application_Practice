@@ -57,7 +57,7 @@ public class SpringBootApplicationPeople {
                 return person;
             }
 
-        }// otherwise it will return null 
+        }// otherwise it will return null
         return null;
     }
 
